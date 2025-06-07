@@ -411,59 +411,26 @@
             <div class="follow-text">⭐ Follow Us</div>
             
             <div class="social-links">
-                <a href="https://www.facebook.com/share/1LLY9kwcie/" class="social-link facebook" target="_blank">
+                <a href="https://www.facebook.com/share/15o4rLHa4Q/" class="social-link facebook" target="_blank">
                     <div class="social-icon">f</div>
                 </a>
                 
-                <a href="https://www.tiktok.com/@ab.onlinesvcs?_t=ZS-8x18RerCyE3&_r=1" class="social-link tiktok" target="_blank">
+                <a href="https://www.tiktok.com/@ab.onlinesvcs?_t=ZS-8x0qFyIRoFL&_r=1" class="social-link tiktok" target="_blank">
                     <div class="social-icon">♪</div>
                 </a>
                 
-                <a href="https://www.instagram.com/abonlinesvcs?utm_source=qr&igsh=eGEwcmVkaHcydDJك" class="social-link instagram" target="_blank">
+                <a href="https://www.instagram.com/abonlinesvcs?igsh=eGEwcmVkaHcydDJk" class="social-link instagram" target="_blank">
                     <div class="social-icon">📷</div>
                 </a>
             </div>
         </div>
 
         <div class="qr-section">
-            <div class="qr-text">امسح الكود لمتابعتنا على مواقع التواصل الاجتماعي</div>
+            <div class="qr-text">امسح الكود للوصول السريع</div>
             <div class="qr-code">
-                <img src="" alt="QR Code لمواقع التواصل الاجتماعي" id="social-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ab-online-services.github.io/AB-Online-Services-professional-E-services-/" alt="QR Code للموقع">
             </div>
         </div>
     </div>
-
-    <script>
-        // إنشاء QR code لمواقع التواصل الاجتماعي
-        function generateSocialQR() {
-            const socialLinks = {
-                facebook: "https://www.facebook.com/share/1LLY9kwcie/",
-                instagram: "https://www.instagram.com/abonlinesvcs?utm_source=qr&igsh=eGEwcmVkaHcydDJك",
-                tiktok: "https://www.tiktok.com/@ab.onlinesvcs?_t=ZS-8x18RerCyE3&_r=1"
-            };
-
-            // إنشاء محتوى QR code يتضمن جميع الروابط
-            const qrContent = `AB Online Services - Follow Us:
-
-📘 Facebook: ${socialLinks.facebook}
-
-📸 Instagram: ${socialLinks.instagram}
-
-🎵 TikTok: ${socialLinks.tiktok}
-
-تابعونا على جميع منصات التواصل الاجتماعي`;
-
-            const encodedContent = encodeURIComponent(qrContent);
-            const qrImg = document.getElementById('social-qr');
-            
-            if (qrImg) {
-                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodedContent}`;
-                qrImg.alt = "QR Code لجميع مواقع التواصل الاجتماعي";
-            }
-        }
-
-        // تشغيل الدالة عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', generateSocialQR);
-    </script>
 </body>
 </html>
