@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB Online Services - Professional E-Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #2c2c2c 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .decorative-lines {
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, #d4af37 50%, transparent 100%);
+            opacity: 0.3;
+            transform: skew(-20deg);
+        }
+
+        .decorative-lines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 20px;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, #b8860b 50%, transparent 100%);
+            transform: skew(-20deg);
+            opacity: 0.5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            border: 3px solid #2c2c2c;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            display: none;
+        }
+
+        .logo-img {
+            position: relative;
+            z-index: 3;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            color: #333;
+            position: relative;
+            z-index: 2;
+        }
+
+        .owner-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .contact-icon {
+            width: 25px;
+            height: 25px;
+            background: #d4af37;
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .social-section {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .follow-text {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #d4af37;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #4267B2 0%, #365899 100%);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
+        }
+
+        .tiktok {
+            background: linear-gradient(135deg, #ff0050 0%, #000 100%);
+        }
+
+        .social-icon {
+            font-size: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            color: #333;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .service-title {
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .service-desc {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .qr-text {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #d4af37;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            color: #d4af37;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .company-name {
+                font-size: 24px;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-lines"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiNkNGFmMzciLz4KPHN2ZyB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjMwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjMwIiB5PSI0MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2Q0YWYzNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zdHlsZT0iaXRhbGljIj5BQjwvdGV4dD4KPC9zdmc+Cjwvc3ZnPgo=" alt="AB Logo" class="logo-img">
+            </div>
+            <h1 class="company-name">ABonline services</h1>
+            <p class="tagline">Professional E-Services</p>
+        </div>
+
+        <div class="info-card">
+            <div class="owner-name">AMAL ABOU HAMDAN</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>+961 3 253819</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <span>+961 71 141566</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Choueifat - Amroussieh - Lebanon</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <span>AB.onlineservices@hotmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <span>ABonlinesvcs@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-section">
+            <div class="services-title">Our Services خدماتنا</div>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-title">🌐 Web Design & Development</div>
+                    <div class="service-desc">تصميم وتطوير المواقع الإلكترونية المتجاوبة والحديثة</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-title">📱 Social Media Management</div>
+                    <div class="service-desc">إدارة وتطوير حسابات التواصل الاجتماعي بشكل احترافي</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-title">✍️ Content Writing SEO Friendly</div>
+                    <div class="service-desc">كتابة محتوى متوافق مع محركات البحث وجذاب للقراء</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-title">🎨 Graphic Design Services</div>
+                    <div class="service-desc">تصميم الشعارات والهويات البصرية والمطبوعات</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-title">🎬 Video Editing</div>
+                    <div class="service-desc">تحرير ومونتاج الفيديوهات بجودة عالية ومؤثرات احترافية</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <div class="follow-text">⭐ Follow Us</div>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/15o4rLHa4Q/" class="social-link facebook" target="_blank">
+                    <div class="social-icon">f</div>
+                </a>
+                
+                <a href="https://www.tiktok.com/@ab.onlinesvcs?_t=ZS-8x0qFyIRoFL&_r=1" class="social-link tiktok" target="_blank">
+                    <div class="social-icon">♪</div>
+                </a>
+                
+                <a href="https://www.instagram.com/abonlinesvcs?igsh=eGEwcmVkaHcydDJk" class="social-link instagram" target="_blank">
+                    <div class="social-icon">📷</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="qr-section">
+            <div class="qr-text">امسح الكود للوصول السريع</div>
+            <div class="qr-placeholder">
+                مكان QR Code<br>
+                (يمكن إضافته لاحقاً)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
